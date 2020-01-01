@@ -17,7 +17,7 @@
 <body>
 <div class="container">
 <h2>登录</h2>
-	<form  action="sigCon.jsp" method="post" id="formcon">
+	<form  action="" method="post" id="formcon">
 	  <div class="form-group">
 	    <label for="exampleInputEmail1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></label>
 	    <input type="text" class="form-control" id="number" placeholder="请输入账号" name = "number">
