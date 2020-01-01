@@ -20,17 +20,13 @@
 	<form  action="" method="post" id="formcon">
 	  <div class="form-group">
 	    <label for="exampleInputEmail1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></label>
-	    <input type="text" class="form-control" id="number" placeholder="请输入账号" name = "number">
+	    <input type="text" class="form-control" id="number" placeholder="请输入账号" name = "userName">
 	  </div>
 	  <div class="form-group">
 	    <label for="exampleInputPassword1"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></label>
-	    <input type="password" class="form-control" id="password" placeholder="请输入密码" name = "password">
+	    <input type="password" class="form-control" id="password" placeholder="请输入密码" name = "userPassword">
 	  </div>
-	  <div class="role">
-	  	管理员：<input type="radio" name="role" value="管理员" >&nbsp&nbsp&nbsp&nbsp
-	  	老师：<input type="radio" name="role" value="老师">&nbsp&nbsp&nbsp&nbsp
-	  	学生：<input type="radio" name="role" value="学生" checked>
-	  </div>
+
 	  <div class="btn1"> 
 	  <button type="submit" class="btn btn-default">登录</button>
 	  </div>
