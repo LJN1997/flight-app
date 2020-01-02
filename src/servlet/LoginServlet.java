@@ -1,5 +1,6 @@
 package servlet;
 
+import entity.User;
 import service.SignUpAndLoginService;
 import service.SignUpAndLoginServiceImpl;
 
@@ -49,13 +50,14 @@ public class LoginServlet extends HttpServlet {
             }
         }else if (role.equals("2")){
             //--调用用户登录方法
-            boolean b = signUpAndLoginService.userLogin(userName, userPassword);
+            User user = signUpAndLoginService.userLogin(userName, userPassword);
             //--如果数据库存在账号返回OK，否则nook
-            if (b){
+            if (user != null){
                 PrintWriter writer = resp.getWriter();
                 writer.println("ok");
                 writer.flush();
                 writer.close();
+                req.getSession().setAttribute("userId",user.getUserId());
             }else {
                 PrintWriter writer = resp.getWriter();
                 writer.println("nook");
