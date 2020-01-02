@@ -20,7 +20,7 @@ public class UserRegServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //--设置编码格式
-        resp.setContentType("text/html;charset=utf-8");
+        //resp.setContentType("text/html;charset=utf-8");
         req.setCharacterEncoding("utf-8");
         //--获取前端参数
         String userName = req.getParameter("userName");
