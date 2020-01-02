@@ -6,23 +6,21 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6594137e-86fc-40d6-8c53-51831c9df5a6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/entity/DTOFlightCity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/servlet/DelFlightServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/servlet/FindAllFlightServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/servlet/SaveFlightServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/servlet/UpdateFlightServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unnamed.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/fastjson-1.2.62.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/mysql-connector-java-5.1.0-bin.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/AdminToFlightDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/AdminToFlightDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/AdminToFlightDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/AdminToFlightDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/AdminToFlightService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/AdminToFlightService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/AdminToFlightServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/AdminToFlightServiceImpl.java" afterDir="false" />
+    <list default="true" id="6594137e-86fc-40d6-8c53-51831c9df5a6" name="Default Changelist" comment="over">
+      <change afterPath="$PROJECT_DIR$/src/servlet/LoginServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/lib/log4j-1.2.17.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/lib/mysql-connector-java-5.1.39-bin.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/SignUpAndLoginDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/SignUpAndLoginDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/SignUpAndLoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/SignUpAndLoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/SignUpAndLoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/SignUpAndLoginServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlet/SignUpAndLoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/UserRegServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/util/JdbcUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/JdbcUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/reg.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/reg.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/reg.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/reg.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/signIn.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/signIn.jsp" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,6 +28,9 @@
   </component>
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="Unnamed">
@@ -54,10 +55,10 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectId" id="1VmLhZgjZ0w994nsSV999ZtGFWV" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
   </component>
+  <component name="ProjectId" id="1VmLhZgjZ0w994nsSV999ZtGFWV" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -80,6 +81,18 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="G:\IdeaProjects\flight-app\web\WEB-INF\lib" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.tomacat">
     <configuration name="fastjson-1.2.62.jar" type="JarApplication" temporary="true">
@@ -161,36 +174,9 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JAR Application.fastjson-1.2.62.jar" />
+      <item itemvalue="JAR 应用程序.fastjson-1.2.62.jar" />
       <item itemvalue="Tomcat Server.tomacat" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JAR Application.fastjson-1.2.62.jar" />
-      </list>
-    </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-            </expand>
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -206,6 +192,7 @@
       <workItem from="1577873144860" duration="7109000" />
       <workItem from="1577881780043" duration="162000" />
       <workItem from="1577881947235" duration="5040000" />
+      <workItem from="1577926509194" duration="1128000" />
     </task>
     <task id="LOCAL-00001">
       <created>1577879475956</created>
@@ -257,7 +244,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="over" />
+    <option name="LAST_COMMIT_MESSAGE" value="over" />
   </component>
   <component name="WindowStateProjectService">
     <state x="135" y="23" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577883514727">
