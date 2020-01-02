@@ -1,7 +1,6 @@
 package servlet;
 
 
-import com.alibaba.fastjson.JSON;
 import entity.Flight;
 import service.AdminToFlightService;
 import service.AdminToFlightServiceImpl;
@@ -12,7 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebServlet("/saveFlight")
 public class SaveFlightServlet extends HttpServlet {
@@ -29,8 +27,6 @@ public class SaveFlightServlet extends HttpServlet {
         flight.setArrivalTime(request.getParameter("arrivalTime"));
         flight.setPrice(Double.parseDouble(request.getParameter("price")));
         String save = service.save(flight);
-        PrintWriter out = response.getWriter();
-        String s = JSON.toJSONString(save);
-        out.println(s);
+        response.sendRedirect("flight");
     }
 }

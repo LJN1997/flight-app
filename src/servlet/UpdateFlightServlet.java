@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebServlet("/updateFlight")
 public class UpdateFlightServlet extends HttpServlet {
@@ -21,6 +20,7 @@ public class UpdateFlightServlet extends HttpServlet {
         response.setContentType("text/plain;charset=utf-8");
         request.setCharacterEncoding("utf-8");
         Flight flight = new Flight();
+        System.out.println(request.getParameter("id"));
         flight.setFlightId(Integer.parseInt(request.getParameter("id")));
         flight.setFlightNumber(request.getParameter("flightNumber"));
         flight.setFromCityId(Integer.parseInt(request.getParameter("fromCityId")));
@@ -29,7 +29,6 @@ public class UpdateFlightServlet extends HttpServlet {
         flight.setArrivalTime(request.getParameter("arrivalTime"));
         flight.setPrice(Double.parseDouble(request.getParameter("price")));
         String status = service.updateFlight(flight);
-        PrintWriter out = response.getWriter();
-        out.println(status);
+        response.sendRedirect("flight");
     }
 }
