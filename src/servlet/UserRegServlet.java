@@ -25,7 +25,7 @@ public class UserRegServlet extends HttpServlet {
         //--获取前端参数
         String userName = req.getParameter("userName");
         String userPassword = req.getParameter("userPassword");
-/*        System.out.println(userName);
+/*      System.out.println(userName);
         System.out.println(userPassword);*/
         //--调用用户注册方法
         boolean b = signUpAndLoginService.userRegister(userName, userPassword);
