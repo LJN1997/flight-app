@@ -10,8 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.Writer;
 
 /**
  * @author: Guozz
@@ -30,11 +28,9 @@ public class TicketServlet extends HttpServlet {
         ticket.setUserId(userId);
         int i = ticketService.insertTicket(ticket);
         if(i>0){
-            PrintWriter writer = response.getWriter();
-            writer.println("1");
+            request.getRequestDispatcher("success.jsp").forward(request,response);
         }else {
-            PrintWriter writer = response.getWriter();
-            writer.println("0");
+            request.getRequestDispatcher("fail.jsp").forward(request,response);
         }
     }
 }

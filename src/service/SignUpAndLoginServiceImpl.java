@@ -2,6 +2,7 @@ package service;
 
 import dao.SignUpAndLoginDao;
 import dao.SignUpAndLoginDaoImpl;
+import entity.User;
 
 public class SignUpAndLoginServiceImpl implements SignUpAndLoginService{
    //--调用dao层接口
@@ -14,7 +15,7 @@ public class SignUpAndLoginServiceImpl implements SignUpAndLoginService{
     }
 
     @Override
-    public boolean userLogin(String userName, String userPassword) {
+    public User userLogin(String userName, String userPassword) {
         //--调用用户登录方法
         return signUpAndLoginDao.userLogin(userName,userPassword);
     }
