@@ -21,7 +21,7 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //--设置编码格式
-        //resp.setContentType("text/html;charset=utf-8");
+        resp.setContentType("text/html;charset=utf-8");
         req.setCharacterEncoding("utf-8");
         //--获取前端参数
         String role = req.getParameter("role");
@@ -38,10 +38,7 @@ public class LoginServlet extends HttpServlet {
             boolean b1 = signUpAndLoginService.adminLogin(userName, userPassword);
             //--如果数据库存在账号返回OK，否则nook
             if (b1){
-                PrintWriter writer = resp.getWriter();
-                writer.println("ok");
-                writer.flush();
-                writer.close();
+                req.getRequestDispatcher("flight.jsp").forward(req,resp);
             }else {
                 PrintWriter writer = resp.getWriter();
                 writer.println("nook");
@@ -53,11 +50,8 @@ public class LoginServlet extends HttpServlet {
             User user = signUpAndLoginService.userLogin(userName, userPassword);
             //--如果数据库存在账号返回OK，否则nook
             if (user != null){
-                PrintWriter writer = resp.getWriter();
-                writer.println("ok");
-                writer.flush();
-                writer.close();
                 req.getSession().setAttribute("userId",user.getUserId());
+                req.getRequestDispatcher("userindex.jsp").forward(req,resp);
             }else {
                 PrintWriter writer = resp.getWriter();
                 writer.println("nook");

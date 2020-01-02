@@ -20,7 +20,7 @@ public class UserRegServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //--设置编码格式
-        //resp.setContentType("text/html;charset=utf-8");
+        resp.setContentType("text/html;charset=utf-8");
         req.setCharacterEncoding("utf-8");
         //--获取前端参数
         String userName = req.getParameter("userName");
@@ -32,9 +32,7 @@ public class UserRegServlet extends HttpServlet {
         //--如果注册成功返回OK，否则nook
        if(b){
            PrintWriter writer = resp.getWriter();
-           writer.println("ok");
-           writer.flush();
-           writer.close();
+           req.getRequestDispatcher("signIn.jsp").forward(req,resp);
        }else {
            PrintWriter writer = resp.getWriter();
            writer.println("nook");
