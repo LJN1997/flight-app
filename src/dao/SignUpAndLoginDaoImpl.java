@@ -1,8 +1,6 @@
 package dao;
 
 
-import entity.Admin;
-import entity.User;
 import util.JdbcUtil;
 
 import java.sql.*;
@@ -11,74 +9,106 @@ public class SignUpAndLoginDaoImpl implements SignUpAndLoginDao {
 
     @Override
     public boolean userRegister(String userName, String userPassword) {
-        Connection conn = null;
-        PreparedStatement pstmt= null;
-        boolean status = userLogin(userName,userPassword);
+        Statement statement=null;
         try {
-            //--获取数据库连接
-            conn = JdbcUtil.createConnect();
-            //--若数据库不存在用户，则添加用户
-            if(!status){
-                //--准备sql语句
-                String sql = "insert into `user` (user_name,user_password) values(?,?)";
-                //--创建执行对象
-                PreparedStatement preparedStatement = conn.prepareStatement(sql);
-                preparedStatement.setString(1, userName);
-                preparedStatement.setString(2, userPassword);
-                return true;
+            //--获取连接
+            Connection conn = JdbcUtil.createConnect();
+             //--创建执行对象
+             statement = conn.createStatement();
+             //--准备sql，查询数据库中是否有数据，有返回false，无则插入数据
+            String sql1="select * from `user` where user_name='"+userName+"' and user_password='"+userPassword+"'";
+            //--获取结果集
+            ResultSet rs = statement.executeQuery(sql1);
+            if (rs.next()){
+                //System.out.println(rs.next());
+                return false;
+            }else {
+                //--插入的sql
+                String sql = "INSERT INTO `user` (user_name,user_password) VALUES ('"+userName+"','"+userPassword+"')";
+                int num = statement.executeUpdate(sql);
+                if (num>0){
+                    return true;
+                }
             }
+
         } catch (Exception e) {
             e.printStackTrace();
+        }finally {
+            try {
+                //--关闭资源
+                statement.close();
+                JdbcUtil.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
-        //--关闭资源
-        JdbcUtil.close();
+
         return false;
     }
 
     @Override
     public boolean userLogin(String userName, String userPassword) {
-        Connection conn = null;
+        Statement stat=null;
+        ResultSet rs=null;
         try {
             //--获取数据库连接
-            conn = JdbcUtil.createConnect();
-            //--准备sql语句
-            String sql1="select * from `user` where user_name=? and user_password=?";
+           Connection conn = JdbcUtil.createConnect();
             //--创建执行对象
-            PreparedStatement pstmt=conn.prepareStatement(sql1);
-            pstmt.setString(1, userName);
-            pstmt.setString(2, userPassword);
+            stat = conn.createStatement();
+            //--准备sql语句
+            String sql="select * from `user` where user_name='"+userName+"' and user_password='"+userPassword+"'";
             //--获取结果集
-            ResultSet resultSet = pstmt.executeQuery();
+            rs = stat.executeQuery(sql);
             //--结果集不为空，返回true，否则返回false
-            if(resultSet.next()){
+            if(rs.next()){
                 return true;
             }
         } catch (Exception e) {
             e.printStackTrace();
+        }finally {
+            //--关闭资源
+            try {
+                rs.close();
+                stat.close();
+                JdbcUtil.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
-        //--关闭资源
-        JdbcUtil.close();
         return false;
     }
 
     @Override
     public boolean adminLogin(String adminName, String adminPassword) {
+
+        Statement stat=null;
+        ResultSet rs=null;
         try {
-            //--准备sql语句
-            String sql = "select * from admin where admin_name=? and admin_password=?";
+            //-- 获取连接
+             Connection conn = JdbcUtil.createConnect();
             //--创建执行对象
-            PreparedStatement preparedStatement = JdbcUtil.createConnect().prepareStatement(sql);
-            preparedStatement.setString(1,adminName);
-            preparedStatement.setString(2,adminPassword);
+             stat = conn.createStatement();
+            //--准备sql语句
+            String sql = "select * from admin where admin_name='"+adminName+"' and admin_password='"+adminPassword+"'";
+            //--获取结果集
+             rs = stat.executeQuery(sql);
             //--结果集不为空返回true,否则返回false
-            if(preparedStatement.executeQuery().next()){
+            if(rs.next()){
+                //System.out.println(rs.next());
                 return true;
             }
         } catch (Exception e) {
             e.printStackTrace();
+        }finally {
+            //--关闭资源
+            try {
+                rs.close();
+                stat.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            JdbcUtil.close();
         }
-        //--关闭资源
-        JdbcUtil.close();
         return false;
     }
 }

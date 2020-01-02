@@ -11,11 +11,10 @@
 
 </head>
 
-
 <body>
 <div class="container">
 <h2>注册</h2>
-	<form action="" method="post" id="formcon">
+	<form action="userReg" method="post" >
 
 	  <div class="form-group">
 	    <label for="userName">用户名</label>
