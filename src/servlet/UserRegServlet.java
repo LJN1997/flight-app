@@ -29,7 +29,7 @@ public class UserRegServlet extends HttpServlet {
         System.out.println(userPassword);*/
         //--调用用户注册方法
         boolean b = signUpAndLoginService.userRegister(userName, userPassword);
-        //--如果注册成功返回OK，否则nook
+        //--如果注册成功返回登录页面，否则nook
        if(b){
            PrintWriter writer = resp.getWriter();
            req.getRequestDispatcher("signIn.jsp").forward(req,resp);
