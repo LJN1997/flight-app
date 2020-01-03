@@ -36,7 +36,7 @@ public class LoginServlet extends HttpServlet {
         if(role.equals("1")){
             //--调用管理员登录方法
             boolean b1 = signUpAndLoginService.adminLogin(userName, userPassword);
-            //--如果数据库存在账号返回OK，否则nook
+            //--如果数据库存在账号返回管理员主页，否则nook
             if (b1){
                 req.getRequestDispatcher("flight.jsp").forward(req,resp);
             }else {
@@ -48,7 +48,7 @@ public class LoginServlet extends HttpServlet {
         }else if (role.equals("2")){
             //--调用用户登录方法
             User user = signUpAndLoginService.userLogin(userName, userPassword);
-            //--如果数据库存在账号返回OK，否则nook
+            //--如果数据库存在账号返回用户主页，否则nook
             if (user != null){
                 req.getSession().setAttribute("userId",user.getUserId());
                 req.getRequestDispatcher("userindex.jsp").forward(req,resp);

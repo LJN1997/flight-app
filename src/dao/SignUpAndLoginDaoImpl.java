@@ -62,14 +62,12 @@ public class SignUpAndLoginDaoImpl implements SignUpAndLoginDao {
             String sql = "select * from `user` where user_name='" + userName + "' and user_password='" + userPassword + "'";
             //--获取结果集
             rs = stat.executeQuery(sql);
-            //--结果集不为空，返回true，否则返回false
-
+            //--结果集不为空，返回用户信息
             if (rs.next()) {
                 user =new User();
                 user.setUserId(rs.getInt("user_id"));
                 user.setUserName(rs.getString("user_name"));
                 user.setUserPassword(rs.getString("user_password"));
-
             }
         } catch (Exception e) {
             e.printStackTrace();
