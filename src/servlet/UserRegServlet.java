@@ -31,8 +31,8 @@ public class UserRegServlet extends HttpServlet {
         boolean b = signUpAndLoginService.userRegister(userName, userPassword);
         //--如果注册成功返回登录页面，否则nook
        if(b){
-           PrintWriter writer = resp.getWriter();
-           req.getRequestDispatcher("signIn.jsp").forward(req,resp);
+
+          resp.sendRedirect("signIn.jsp");
        }else {
            PrintWriter writer = resp.getWriter();
            writer.println("nook");

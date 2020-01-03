@@ -38,7 +38,7 @@ public class LoginServlet extends HttpServlet {
             boolean b1 = signUpAndLoginService.adminLogin(userName, userPassword);
             //--如果数据库存在账号返回管理员主页，否则nook
             if (b1){
-                req.getRequestDispatcher("flight.jsp").forward(req,resp);
+                resp.sendRedirect("flight.jsp");
             }else {
                 PrintWriter writer = resp.getWriter();
                 writer.println("nook");
@@ -51,7 +51,7 @@ public class LoginServlet extends HttpServlet {
             //--如果数据库存在账号返回用户主页，否则nook
             if (user != null){
                 req.getSession().setAttribute("userId",user.getUserId());
-                req.getRequestDispatcher("userindex.jsp").forward(req,resp);
+                resp.sendRedirect("userindex.jsp");
             }else {
                 PrintWriter writer = resp.getWriter();
                 writer.println("nook");
