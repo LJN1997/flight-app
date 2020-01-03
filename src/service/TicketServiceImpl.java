@@ -11,6 +11,14 @@ import entity.Ticket;
  */
 public class TicketServiceImpl implements ITicketService{
     private ITicketDao ticketDao = new TicketDaoImpl();
+
+    /**
+     *  插入订单：
+     *       成功返回1
+     *       失败返回0
+     * @param ticket
+     * @return
+     */
     @Override
     public int insertTicket(Ticket ticket) {
         return ticketDao.insertTicket(ticket);

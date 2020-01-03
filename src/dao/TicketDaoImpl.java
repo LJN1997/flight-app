@@ -15,7 +15,13 @@ import java.util.Date;
  * date:2020/1/1 18:39
  */
 public class TicketDaoImpl implements ITicketDao {
-
+    /**
+     *  插入订单：
+     *       成功返回1
+     *       失败返回0
+     * @param ticket
+     * @return
+     */
     @Override
     public int insertTicket(Ticket ticket) {
         try {
