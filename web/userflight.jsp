@@ -34,9 +34,9 @@
           <td>${data.arrivalTime}</td>
           <td>${data.price}</td>
           <%
-            int userId = Integer.parseInt((String) session.getAttribute("userId"));
+            String userId = String.valueOf(session.getAttribute("userId"));
           %>
-          <td><a href="ticket/userId=${userId}&flight=${data.flightId}">订票</a></td>
+          <td><a href="ticket?userId=${userId}&flightId=${data.flightId}">订票</a></td>
         </tr>
         </c:forEach>
       </table>
