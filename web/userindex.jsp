@@ -13,7 +13,7 @@
 <body>
     <h3 align="center">航班查询</h3>
     <hr color="red">
-    <a href="userflight" >查询航班</a>
+    <h5 align="center"><a href="userflight" >查询航班</a></h5>
 
 </body>
 </html>

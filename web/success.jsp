@@ -12,6 +12,6 @@
 </head>
 <body>
     <h3 align="center">操作成功</h3>
-    <a href="userindex.jsp">返回</a>
+    <h5 align="center"><a href="userindex.jsp">返回</a></h5>
 </body>
 </html>
