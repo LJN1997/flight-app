@@ -38,7 +38,7 @@ public class LoginServlet extends HttpServlet {
             boolean b1 = signUpAndLoginService.adminLogin(userName, userPassword);
             //--如果数据库存在账号返回管理员主页，否则nook
             if (b1){
-                resp.sendRedirect("flight.jsp");
+                resp.sendRedirect("flight");
             }else {
                 PrintWriter writer = resp.getWriter();
                 writer.println("nook");
