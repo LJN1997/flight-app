@@ -87,7 +87,6 @@ public class SignUpAndLoginDaoImpl implements SignUpAndLoginDao {
     //--管理员登录
     @Override
     public boolean adminLogin(String adminName, String adminPassword) {
-
         Statement stat = null;
         ResultSet rs = null;
         try {

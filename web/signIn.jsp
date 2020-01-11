@@ -26,12 +26,10 @@
 	    <label for=""><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></label>
 	    <input type="password" class="form-control" id="userPassword" placeholder="请输入密码" name = "userPassword">
 	  </div>
-
 		<div class="role">
 			管理员：<input type="radio" name="role" value="1">&nbsp&nbsp&nbsp&nbsp
 			用户：<input type="radio" name="role" value="2">
 		</div>
-
 	  <div class="btn1">
 	  <button type="submit" class="btn btn-default">登录</button>
 	  </div>

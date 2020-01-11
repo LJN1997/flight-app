@@ -12,8 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name="LoginServlet",
-        urlPatterns = "/login"	)
+@WebServlet(name="LoginServlet", urlPatterns = "/login"	)
 public class LoginServlet extends HttpServlet {
     //--调用service层接口
     private SignUpAndLoginService signUpAndLoginService =new SignUpAndLoginServiceImpl();
@@ -27,11 +26,7 @@ public class LoginServlet extends HttpServlet {
         String role = req.getParameter("role");
         String userName = req.getParameter("userName");
         String userPassword = req.getParameter("userPassword");
-/*
-        System.out.println(role);
-        System.out.println(userName);
-        System.out.println(userPassword);
-*/
+
         //--角色判断，如果是1执行管理员登录，如果是2执行用户登录
         if(role.equals("1")){
             //--调用管理员登录方法
