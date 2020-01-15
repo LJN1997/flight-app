@@ -2,11 +2,13 @@
          pageEncoding="utf-8"%>
 <%@ page import="java.io.*,java.util.*,java.sql.*"%>
 <%@ page import="javax.servlet.http.*,javax.servlet.*" %>
+<%@ page import="entity.ShowPrice" %>
 <% response.setContentType("text/html;charset=utf-8"); %>
 <%
   request.setCharacterEncoding("utf-8");
   response.setContentType("text/html;charset=utf-8");
-  Object data = request.getAttribute("data");
+  Object date = request.getAttribute("data1");
+  Object price = request.getAttribute("data2");
 
 %>
 <!DOCTYPE html>
@@ -22,39 +24,20 @@
 <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
 <div id="main" style="width: 600px;height:400px;"></div>
 <script type="text/javascript">
-  var Data = ${data}
   var myChart = echarts.init(document.getElementById('main'));
+
   // 指定图表的配置项和数据
   var option = {
-    title: {
-      text: '盈利统计',
-      left: 'center'
+    xAxis: {
+      data:<%=date%>
     },
-    tooltip: {
-      trigger: 'item',
-      formatter: '{a} <br/>{b} : {c} ({d}%)'
+    yAxis: {
+      type: 'value'
     },
-    legend: {
-      orient: 'vertical',
-      left: 'left',
-      data: ''
-    },
-    series: [
-      {
-        name: '',
-        type: 'pie',
-        radius: '55%',
-        center: ['50%', '60%'],
-        data:Data,
-        emphasis: {
-          itemStyle: {
-            shadowBlur: 10,
-            shadowOffsetX: 0,
-            shadowColor: 'rgba(0, 0, 0, 0.5)'
-          }
-        }
-      }
-    ]
+    series: [{
+      data: <%=price%>,
+      type: 'bar'
+    }]
   };
 
 
