@@ -5,6 +5,7 @@
   <head>
     <title>增加航班</title>
   </head>
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
   <body>
   <h3 align="center">增加航班信息</h3>
   <hr color="red">

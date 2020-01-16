@@ -6,10 +6,11 @@
     <title>后台</title>
   </head>
   <body>
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
   <h3 align="center">航班信息</h3>
   <hr color="red">
   <center>
-      <table border="1" cellspacing="0">
+      <table class="table table-bordered">
         <tr>
           <th>航班ID</th>
           <th>航班名字</th>

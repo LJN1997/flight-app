@@ -1,19 +1,17 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Guozhenze
-  Date: 2020/1/2
-  Time: 18:35
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>主页</title>
 </head>
+<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
 <body>
-    <h3 align="center">航班查询</h3>
-    <hr color="red">
-    <h5 align="center"><a href="userflight" >查询航班</a></h5>
+    <div>
 
+            <h3 align="center"> 航空系统 <small>航班查询</small></h3>
+            <hr color="red">
+            <h5 align="center"><a href="userflight" class="btn btn-default"  role="button">查询航班</a></h5>
+
+    </div>
 </body>
 </html>
